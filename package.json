@@ -1,9 +1,11 @@
 {
+  "proxy": "http://localhost:8080",
   "name": "react-challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.6.3",
+    "react-collapsible-component": "^1.1.2",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
   },
@@ -16,6 +18,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+ 
   "browserslist": [
     ">0.2%",
     "not dead",

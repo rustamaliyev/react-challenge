@@ -1,0 +1,61 @@
+body {
+
+    font-size: 12px;
+    color: #000
+}
+
+    .panel .panel-heading {
+        cursor: pointer;
+    }
+    .panel .panel-collapse {
+        overflow: hidden;
+        transition: height 0.3s ease-out;  
+    }
+    .panel .panel-body {
+        border: none !important;
+        color: #000;
+        display: block;
+        height: 100px;
+    }
+    .panel .panel-body p {
+        color: #000;
+    }
+    .panel h2 {margin-top: 5px !important; text-transform: capitalize}
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 0.2s;
+       
+    }
+
+    .loader .icon {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url('../images/loading.gif') no-repeat 0 0;
+        background-size: 248px 248px;
+    }
+
+     
+    .is-loading  .loader {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s linear, visibility 0.3s linear;
+            z-index: 3;
+            
+    }
+
+    .is-loading  .loader .icon {
+        animation: spin 500ms infinite linear;
+    }
+    
+    
