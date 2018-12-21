@@ -1,6 +1,29 @@
 import React from 'react';
 
-const navbar = props => (
+
+
+class Navbar extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isLoading: true,
+            users: [],
+            displayNone: true
+
+           
+        }
+       
+    }
+
+    showMobileNav(){
+        this.setState({displayNone: !this.state.displayNone})
+     }
+
+     render(){
+     //toggle for mobile navigation    
+     let show_class = this.state.displayNone ? "hide" : "show";
+     return (   
+    
     <nav>
     <div className="container">
        <div className="flex-grid-thirds">
@@ -11,9 +34,9 @@ const navbar = props => (
                    
                </div>
                <div className="col-8">
-                   <span className="navbar-toggle" id="js-navbar-toggle"><i className="fas fa-bars"></i></span>
+                   <span className="navbar-toggle" id="js-navbar-toggle" onClick={this.showMobileNav.bind(this)}><i className="fas fa-bars"></i></span>
                    <div className="menu">
-                       <ul className="main-nav" id="js-menu">
+                       <ul className={show_class} id="js-menu">
                            <li><a href="#" title="Patients" className="active">PATIENTS</a></li>
                            <li><a href="#" title="Tasks">TASKS</a></li>
                            <li><a href="#" title="Dashboard">DASHBOARD</a></li>
@@ -32,6 +55,8 @@ const navbar = props => (
 
 
     </nav>
-);
-
-export default navbar;
+        );
+     }
+    
+    }
+    export default Navbar;
