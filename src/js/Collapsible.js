@@ -25,7 +25,7 @@ class Collapsible extends React.Component {
         return (
             <div className={`panel ${isExpanded ? 'is-expanded' : ''}`} onClick={(e) => this.handleToggle(e)}>
                 <div className="panel-heading">
-                    <h2>{title}</h2>
+                    <h2>{title}</h2><span className="details-link">View Details <i className="fas fa-angle-right"></i></span>
                 </div>
                 <div className="panel-collapse" style={{height: currentHeight+'px'}}>
                     <div className="panel-body" ref="inner">
